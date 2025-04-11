@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Name - HOME Appliances</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF6B6B",
+              secondary: "#4ECDC4",
+              dark: "#292F36",
+              light: "#F7FFF7",
+              accent: "#FFE66D",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans bg-light text-dark">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <a href="../index.html">
+            <img
+              src="../assets/images/logo-home.png"
+              alt="HOME Logo"
+              class="h-10 mr-2"
+            />
+          </a>
+        </div>
+
+        <nav class="hidden md:flex space-x-8">
+          <a href="../index.html#home" class="hover:text-primary transition"
+            >Home</a
+          >
+          <a href="../index.html#products" class="hover:text-primary transition"
+            >Products</a
+          >
+          <a href="../index.html#about" class="hover:text-primary transition"
+            >About Us</a
+          >
+          <a
+            href="../index.html#testimonials"
+            class="hover:text-primary transition"
+            >Testimonials</a
+          >
+          <a href="../index.html#contact" class="hover:text-primary transition"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <div class="cart relative">
+            <button class="text-dark hover:text-primary transition">
+              <i class="fas fa-shopping-cart text-xl"></i>
+              <span
+                class="cart-count bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2"
+                >0</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Product Image -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src="../assets/images/product-image.jpg"
+              alt="Product Name"
+              class="w-full h-auto rounded-lg"
+              id="product-image"
+            />
+            <div class="grid grid-cols-4 gap-4 mt-4">
+              <div
+                class="thumbnail cursor-pointer border-2 border-transparent hover:border-primary rounded-lg overflow-hidden"
+              >
+                <img
+                  src="../assets/images/product-image.jpg"
+                  alt="Thumbnail 1"
+                  class="w-full h-20 object-cover"
+                />
+              </div>
+              <div
+                class="thumbnail cursor-pointer border-2 border-transparent hover:border-primary rounded-lg overflow-hidden"
+              >
+                <img
+                  src="../assets/images/product-image.jpg"
+                  alt="Thumbnail 2"
+                  class="w-full h-20 object-cover"
+                />
+              </div>
+              <div
+                class="thumbnail cursor-pointer border-2 border-transparent hover:border-primary rounded-lg overflow-hidden"
+              >
+                <img
+                  src="../assets/images/product-image.jpg"
+                  alt="Thumbnail 3"
+                  class="w-full h-20 object-cover"
+                />
+              </div>
+              <div
+                class="thumbnail cursor-pointer border-2 border-transparent hover:border-primary rounded-lg overflow-hidden"
+              >
+                <img
+                  src="../assets/images/product-image.jpg"
+                  alt="Thumbnail 4"
+                  class="w-full h-20 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h1 class="text-3xl font-bold mb-2" id="product-name">
+              Product Name
+            </h1>
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-600 text-sm ml-2" id="review-count"
+                >(128 reviews)</span
+              >
+            </div>
+            <p class="text-2xl font-bold text-primary mb-6" id="product-price">
+              $89.99
+            </p>
+            <p class="text-gray-600 mb-6" id="product-description">
+              Product description goes here. This is a detailed description of
+              the product features and benefits.
+            </p>
+
+            <div class="mb-6">
+              <h3 class="font-bold mb-2">Key Features:</h3>
+              <ul
+                class="list-disc list-inside text-gray-600 space-y-2"
+                id="product-features"
+              >
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+                <li>Feature 4</li>
+              </ul>
+            </div>
+
+            <div class="flex items-center mb-6">
+              <div class="flex items-center border rounded-lg overflow-hidden">
+                <button
+                  class="quantity-btn px-4 py-2 bg-gray-100 hover:bg-gray-200"
+                  id="decrease-quantity"
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  value="1"
+                  min="1"
+                  class="w-16 text-center border-x py-2"
+                  id="quantity"
+                />
+                <button
+                  class="quantity-btn px-4 py-2 bg-gray-100 hover:bg-gray-200"
+                  id="increase-quantity"
+                >
+                  +
+                </button>
+              </div>
+              <button
+                class="add-to-cart bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-lg ml-4 transition"
+                id="add-to-cart-btn"
+              >
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="border-t pt-6">
+              <h3 class="font-bold mb-4">Product Specifications:</h3>
+              <div
+                class="grid grid-cols-2 gap-4 text-gray-600"
+                id="product-specs"
+              >
+                <div>
+                  <span class="font-medium">Brand:</span>
+                  <span>HOME Appliances</span>
+                </div>
+                <div>
+                  <span class="font-medium">Model:</span>
+                  <span>PRO-123</span>
+                </div>
+                <div>
+                  <span class="font-medium">Warranty:</span>
+                  <span>2 Years</span>
+                </div>
+                <div>
+                  <span class="font-medium">Color:</span>
+                  <span>Silver</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products Section -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-8">You May Also Like</h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          id="related-products"
+        >
+          <!-- Related products will be dynamically added here -->
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Product data will be loaded here
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get product ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get("id");
+
+        // Load product data based on ID
+        loadProductData(productId);
+
+        // Quantity controls
+        const quantityInput = document.getElementById("quantity");
+        const decreaseBtn = document.getElementById("decrease-quantity");
+        const increaseBtn = document.getElementById("increase-quantity");
+
+        decreaseBtn.addEventListener("click", () => {
+          const currentValue = parseInt(quantityInput.value);
+          if (currentValue > 1) {
+            quantityInput.value = currentValue - 1;
+          }
+        });
+
+        increaseBtn.addEventListener("click", () => {
+          const currentValue = parseInt(quantityInput.value);
+          quantityInput.value = currentValue + 1;
+        });
+
+        // Add to cart functionality
+        const addToCartBtn = document.getElementById("add-to-cart-btn");
+        addToCartBtn.addEventListener("click", () => {
+          const productName =
+            document.getElementById("product-name").textContent;
+          const quantity = parseInt(quantityInput.value);
+
+          // Show confirmation
+          const notification = document.createElement("div");
+          notification.className =
+            "fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center";
+          notification.innerHTML = `
+            <i class="fas fa-check-circle mr-2"></i>
+            <span>${quantity} ${productName} added to cart!</span>
+          `;
+
+          document.body.appendChild(notification);
+
+          setTimeout(() => {
+            notification.style.transition = "opacity 0.5s";
+            notification.style.opacity = "0";
+
+            setTimeout(() => {
+              notification.remove();
+            }, 500);
+          }, 3000);
+        });
+
+        // Thumbnail click functionality
+        document.querySelectorAll(".thumbnail").forEach((thumb) => {
+          thumb.addEventListener("click", () => {
+            const mainImage = document.getElementById("product-image");
+            const thumbImage = thumb.querySelector("img");
+            mainImage.src = thumbImage.src;
+          });
+        });
+      });
+
+      function loadProductData(productId) {
+        // This would typically fetch data from an API
+        // For now, we'll use a mock data structure
+        const products = {
+          1: {
+            name: "Smart Toaster Pro",
+            price: "89.99",
+            description:
+              "Perfect toast every time with 7 browning settings and smart sensors.",
+            reviewCount: "(128 reviews)",
+            features: [
+              "7 browning settings",
+              "Smart sensors for perfect toast",
+              "Wide slots for bagels",
+              "Removable crumb tray",
+            ],
+            specs: {
+              brand: "HOME Appliances",
+              model: "TOAST-2023",
+              warranty: "2 Years",
+              color: "Silver",
+            },
+          },
+          2: {
+            name: "Air Fryer Deluxe",
+            price: "129.99",
+            description:
+              "Healthier fried food with 75% less fat using rapid air technology.",
+            reviewCount: "(256 reviews)",
+            features: [
+              "75% less fat cooking",
+              "Rapid air technology",
+              "Digital touch controls",
+              "Non-stick basket",
+            ],
+            specs: {
+              brand: "HOME Appliances",
+              model: "AIR-2023",
+              warranty: "2 Years",
+              color: "Black",
+            },
+          },
+          3: {
+            name: "Power Blender 9000",
+            price: "149.99",
+            description:
+              "Professional-grade blender with 1500W motor for smoothies, soups, and more.",
+            reviewCount: "(84 reviews)",
+            features: [
+              "1500W motor",
+              "6-speed control",
+              "Stainless steel blades",
+              "BPA-free container",
+            ],
+            specs: {
+              brand: "HOME Appliances",
+              model: "BLEND-2023",
+              warranty: "2 Years",
+              color: "Red",
+            },
+          },
+          4: {
+            name: "Barista Coffee Maker",
+            price: "179.99",
+            description:
+              "Cafe-quality coffee at home with adjustable strength and temperature.",
+            reviewCount: "(312 reviews)",
+            features: [
+              "Adjustable strength",
+              "Temperature control",
+              "Programmable timer",
+              "Built-in grinder",
+            ],
+            specs: {
+              brand: "HOME Appliances",
+              model: "COFFEE-2023",
+              warranty: "2 Years",
+              color: "Black",
+            },
+          },
+          5: {
+            name: "Smart Electric Kettle",
+            price: "49.99",
+            description:
+              "Fast boiling with temperature control, auto shut-off, and keep-warm function for your perfect cup of tea or coffee.",
+            reviewCount: "(156 reviews)",
+            features: [
+              "Temperature control",
+              "Auto shut-off",
+              "Keep-warm function",
+              "Rapid boiling",
+            ],
+            specs: {
+              brand: "HOME Appliances",
+              model: "KETTLE-2023",
+              warranty: "2 Years",
+              color: "White",
+            },
+          },
+        };
+
+        const product = products[productId];
+        if (product) {
+          document.getElementById("product-name").textContent = product.name;
+          document.getElementById(
+            "product-price"
+          ).textContent = `$${product.price}`;
+          document.getElementById("product-description").textContent =
+            product.description;
+          document.getElementById("review-count").textContent =
+            product.reviewCount;
+
+          const featuresList = document.getElementById("product-features");
+          featuresList.innerHTML = product.features
+            .map((feature) => `<li>${feature}</li>`)
+            .join("");
+
+          const specsContainer = document.getElementById("product-specs");
+          specsContainer.innerHTML = `
+            <div><span class="font-medium">Brand:</span> <span>${product.specs.brand}</span></div>
+            <div><span class="font-medium">Model:</span> <span>${product.specs.model}</span></div>
+            <div><span class="font-medium">Warranty:</span> <span>${product.specs.warranty}</span></div>
+            <div><span class="font-medium">Color:</span> <span>${product.specs.color}</span></div>
+          `;
+
+          // Update image source
+          document.getElementById(
+            "product-image"
+          ).src = `../assets/images/${product.name
+            .toLowerCase()
+            .replace(/\s+/g, "-")}.jpg`;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME Appliances - Premium Kitchen & Home Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF6B6B",
+              secondary: "#4ECDC4",
+              dark: "#292F36",
+              light: "#F7FFF7",
+              accent: "#FFE66D",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .hero-bg {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("assets/images/cof-home.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .cart-dropdown {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        width: 350px;
+      }
+
+      .cart:hover .cart-dropdown {
+        display: block;
+      }
+
+      .testimonial-card {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .pulse-animation {
+        animation: pulse 2s infinite;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-light text-dark">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <img
+            src="assets/images/logo-home.png"
+            alt="HOME Logo"
+            class="h-10 mr-2"
+          />
+          <!-- <a href="#" class="text-2xl font-bold text-primary">HOME</a> -->
+        </div>
+
+        <nav class="hidden md:flex space-x-8">
+          <a href="#home" class="hover:text-primary transition">Home</a>
+          <a href="#products" class="hover:text-primary transition">Products</a>
+          <a href="#about" class="hover:text-primary transition">About Us</a>
+          <a href="#testimonials" class="hover:text-primary transition"
+            >Testimonials</a
+          >
+          <a href="#contact" class="hover:text-primary transition">Contact</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <div class="cart relative">
+            <button class="text-dark hover:text-primary transition">
+              <i class="fas fa-shopping-cart text-xl"></i>
+              <span
+                class="cart-count bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2"
+                >0</span
+              >
+            </button>
+            <div class="cart-dropdown bg-white shadow-lg rounded-md p-4 mt-2">
+              <h4 class="font-bold mb-2">Your Cart</h4>
+              <div class="cart-items">
+                <p class="text-gray-500 text-sm">Your cart is empty</p>
+              </div>
+              <div class="border-t mt-3 pt-3 hidden">
+                <div class="flex justify-between mb-2">
+                  <span>Total:</span>
+                  <span class="cart-total font-bold">$0.00</span>
+                </div>
+                <div class="payment-methods my-3">
+                  <h5 class="font-bold text-sm mb-2">Payment Method:</h5>
+                  <div class="grid grid-cols-2 gap-2 mb-3">
+                    <label
+                      class="flex items-center border rounded p-2 cursor-pointer hover:border-primary"
+                    >
+                      <input
+                        type="radio"
+                        name="payment-method"
+                        value="credit-card"
+                        class="mr-2"
+                        checked
+                      />
+                      <span class="text-sm">Credit Card</span>
+                    </label>
+                    <label
+                      class="flex items-center border rounded p-2 cursor-pointer hover:border-primary"
+                    >
+                      <input
+                        type="radio"
+                        name="payment-method"
+                        value="paypal"
+                        class="mr-2"
+                      />
+                      <span class="text-sm">PayPal</span>
+                    </label>
+                  </div>
+                  <div class="credit-card-form">
+                    <div class="mb-2">
+                      <input
+                        type="text"
+                        placeholder="Card Number"
+                        class="w-full px-3 py-2 border rounded text-sm"
+                        value="4111 1111 1111 1111"
+                      />
+                    </div>
+                    <div class="flex gap-2 mb-3">
+                      <input
+                        type="text"
+                        placeholder="MM/YY"
+                        class="w-1/2 px-3 py-2 border rounded text-sm"
+                        value="12/25"
+                      />
+                      <input
+                        type="text"
+                        placeholder="CVC"
+                        class="w-1/2 px-3 py-2 border rounded text-sm"
+                        value="123"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="checkout-btn block w-full bg-primary text-white text-center py-2 rounded hover:bg-opacity-90 transition"
+                >
+                  Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+          <button class="md:hidden text-dark hover:text-primary transition">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          Innovative Home Appliances
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          Transform your kitchen with our premium, high-quality appliances
+          designed for modern living.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="#products"
+            class="bg-primary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-full transition transform hover:scale-105"
+            >Shop Now</a
+          >
+          <a
+            href="#about"
+            class="bg-white hover:bg-opacity-90 text-dark font-bold py-3 px-6 rounded-full transition transform hover:scale-105"
+            >Learn More</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center p-6 rounded-lg hover:shadow-lg transition">
+            <div
+              class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-award text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Premium Quality</h3>
+            <p class="text-gray-600">
+              Our appliances are built to last with high-grade materials and
+              rigorous testing.
+            </p>
+          </div>
+          <div class="text-center p-6 rounded-lg hover:shadow-lg transition">
+            <div
+              class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-leaf text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Eco-Friendly</h3>
+            <p class="text-gray-600">
+              Energy-efficient designs that reduce your carbon footprint and
+              utility bills.
+            </p>
+          </div>
+          <div class="text-center p-6 rounded-lg hover:shadow-lg transition">
+            <div
+              class="bg-accent bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-headset text-accent text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+            <p class="text-gray-600">
+              Our customer service team is always ready to assist you with any
+              questions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Our Products</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Discover our range of innovative home appliances that make everyday
+            tasks easier and more enjoyable.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Product 1 -->
+          <a
+            href="products/smart-toaster-pro.html"
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+          >
+            <div class="relative">
+              <img
+                src="assets/images/toaster-home.jpg"
+                alt="Smart Toaster"
+                class="w-full h-48 object-cover"
+              />
+              <span
+                class="bg-primary text-white text-xs font-bold px-2 py-1 rounded absolute top-2 left-2"
+                >BESTSELLER</span
+              >
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Smart Toaster Pro</h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="text-gray-600 text-sm ml-2">(128 reviews)</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-3">
+                Perfect toast every time with 7 browning settings and smart
+                sensors.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-lg">$44.99</span>
+                <button
+                  class="add-to-cart bg-primary hover:bg-opacity-90 text-white px-3 py-1 rounded-full text-sm transition"
+                  data-id="1"
+                  data-name="Smart Toaster Pro"
+                  data-price="44.99"
+                >
+                  <i class="fas fa-cart-plus mr-1"></i> Add
+                </button>
+              </div>
+            </div>
+          </a>
+
+          <!-- Product 2 -->
+          <a
+            href="products/air-fryer-deluxe.html"
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+          >
+            <div class="relative">
+              <img
+                src="assets/images/airfrier.png"
+                alt="Air Fryer"
+                class="w-full h-48 object-cover"
+              />
+              <span
+                class="bg-secondary text-white text-xs font-bold px-2 py-1 rounded absolute top-2 left-2"
+                >NEW</span
+              >
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Air Fryer Deluxe</h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="text-gray-600 text-sm ml-2">(256 reviews)</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-3">
+                Healthier fried food with 75% less fat using rapid air
+                technology.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-lg">$64.99</span>
+                <button
+                  class="add-to-cart bg-primary hover:bg-opacity-90 text-white px-3 py-1 rounded-full text-sm transition"
+                  data-id="2"
+                  data-name="Air Fryer Deluxe"
+                  data-price="64.99"
+                >
+                  <i class="fas fa-cart-plus mr-1"></i> Add
+                </button>
+              </div>
+            </div>
+          </a>
+
+          <!-- Product 3 -->
+          <a
+            href="products/power-blender-9000.html"
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+          >
+            <div class="relative">
+              <img
+                src="assets/images/belender-removebg.png"
+                alt="Blender"
+                class="w-full h-48 object-cover"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Power Blender 9000</h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <span class="text-gray-600 text-sm ml-2">(84 reviews)</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-3">
+                Professional-grade blender with 1500W motor for smoothies,
+                soups, and more.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-lg">$74.99</span>
+                <button
+                  class="add-to-cart bg-primary hover:bg-opacity-90 text-white px-3 py-1 rounded-full text-sm transition"
+                  data-id="3"
+                  data-name="Power Blender 9000"
+                  data-price="74.99"
+                >
+                  <i class="fas fa-cart-plus mr-1"></i> Add
+                </button>
+              </div>
+            </div>
+          </a>
+
+          <!-- Product 4 -->
+          <a
+            href="products/barista-coffee-maker.html"
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+          >
+            <div class="relative">
+              <img
+                src="assets/images/coffeemachine.jpg"
+                alt="Coffee Maker"
+                class="w-full h-48 object-cover"
+              />
+              <span
+                class="bg-accent text-dark text-xs font-bold px-2 py-1 rounded absolute top-2 left-2"
+                >LIMITED</span
+              >
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Barista Coffee Maker</h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="text-gray-600 text-sm ml-2">(312 reviews)</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-3">
+                Cafe-quality coffee at home with adjustable strength and
+                temperature.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-lg">$89.99</span>
+                <button
+                  class="add-to-cart bg-primary hover:bg-opacity-90 text-white px-3 py-1 rounded-full text-sm transition"
+                  data-id="4"
+                  data-name="Barista Coffee Maker"
+                  data-price="89.99"
+                >
+                  <i class="fas fa-cart-plus mr-1"></i> Add
+                </button>
+              </div>
+            </div>
+          </a>
+
+          <!-- Product 5 -->
+          <a
+            href="products/smart-electric-kettle.html"
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+          >
+            <div class="relative">
+              <img
+                src="assets/images/electrical-kettle.jpg"
+                alt="Electrical Kettle"
+                class="w-full h-48 object-cover"
+              />
+              <span
+                class="bg-accent text-dark text-xs font-bold px-2 py-1 rounded absolute top-2 left-2"
+                >LIMITED</span
+              >
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Smart Electric Kettle</h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="text-gray-600 text-sm ml-2">(156 reviews)</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-3">
+                Fast boiling with temperature control, auto shut-off, and
+                keep-warm function for your perfect cup of tea or coffee.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-lg">$19.99</span>
+                <button
+                  class="add-to-cart bg-primary hover:bg-opacity-90 text-white px-3 py-1 rounded-full text-sm transition"
+                  data-id="5"
+                  data-name="Smart Electric Kettle"
+                  data-price="19.99"
+                >
+                  <i class="fas fa-cart-plus mr-1"></i> Add
+                </button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="inline-block bg-dark hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105"
+          >
+            View All Products <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center">
+          <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+            <img
+              src="assets/images/cof-home.jpg"
+              alt="Our Factory"
+              class="rounded-lg shadow-lg w-full"
+            />
+          </div>
+          <div class="lg:w-1/2">
+            <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+            <p class="text-gray-600 mb-4">
+              Founded in 2005, HOME Appliances began with a simple mission: to
+              create high-quality, innovative kitchen appliances that make
+              everyday cooking easier and more enjoyable.
+            </p>
+            <p class="text-gray-600 mb-6">
+              Today, we're proud to be a leading manufacturer with products in
+              over 1 million homes worldwide. Our team of engineers and
+              designers work tirelessly to develop appliances that combine
+              cutting-edge technology with timeless design.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <div class="bg-primary bg-opacity-10 p-4 rounded-lg">
+                <h3 class="font-bold text-primary mb-2">15+ Years</h3>
+                <p class="text-gray-600 text-sm">
+                  Of innovation and excellence in home appliances
+                </p>
+              </div>
+              <div class="bg-secondary bg-opacity-10 p-4 rounded-lg">
+                <h3 class="font-bold text-secondary mb-2">1M+ Homes</h3>
+                <p class="text-gray-600 text-sm">
+                  Trusting our products for their daily needs
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">What Our Customers Say</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Don't just take our word for it - hear from our satisfied customers.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="testimonial-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Sarah J."
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Sarah J.</h4>
+                <div class="flex text-yellow-400 text-sm">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "The Air Fryer Deluxe has completely changed how I cook. It's so
+              easy to use and the results are amazing. I've recommended it to
+              all my friends!"
+            </p>
+          </div>
+
+          <div class="testimonial-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Michael T."
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Michael T.</h4>
+                <div class="flex text-yellow-400 text-sm">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "As a coffee enthusiast, the Barista Coffee Maker is a
+              game-changer. The quality rivals my local coffee shop but at a
+              fraction of the price."
+            </p>
+          </div>
+
+          <div class="testimonial-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Lisa M."
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Lisa M.</h4>
+                <div class="flex text-yellow-400 text-sm">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "The Smart Toaster Pro is worth every penny. Perfect toast every
+              morning and the design looks great on my countertop. Customer
+              service was excellent too!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">Ready to Upgrade Your Kitchen?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Join thousands of satisfied customers who trust HOME Appliances for
+          their daily needs.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="#products"
+            class="bg-white hover:bg-opacity-90 text-primary font-bold py-3 px-8 rounded-full transition transform hover:scale-105 pulse-animation"
+          >
+            Shop Now
+          </a>
+          <a
+            href="#contact"
+            class="border-2 border-white hover:bg-white hover:bg-opacity-20 font-bold py-3 px-8 rounded-full transition transform hover:scale-105"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Have questions about our products or need support? We're here to
+            help.
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-12">
+          <div class="lg:w-1/2">
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-gray-700 font-medium mb-2"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-gray-700 font-medium mb-2"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="subject"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="bg-primary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-full transition"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <div class="lg:w-1/2">
+            <div class="bg-gray-50 p-8 rounded-lg h-full">
+              <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                    <i class="fas fa-map-marker-alt text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Address</h4>
+                    <p class="text-gray-600">
+                      123 Appliance Street, Kitchenville, KV 12345
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                    <i class="fas fa-phone-alt text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Phone</h4>
+                    <p class="text-gray-600">+1 (800) 123-4567</p>
+                    <p class="text-gray-600">Mon-Fri: 8am-6pm EST</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                    <i class="fas fa-envelope text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Email</h4>
+                    <p class="text-gray-600">support@homeappliances.com</p>
+                    <p class="text-gray-600">sales@homeappliances.com</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <h4 class="font-bold mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"
+                  >
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-12 bg-gray-100">
+      <div class="container mx-auto px-4 text-center">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-2xl font-bold mb-4">Stay Updated</h2>
+          <p class="text-gray-600 mb-6">
+            Subscribe to our newsletter for the latest products, special offers,
+            and home appliance tips.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="flex-grow px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+            <button
+              type="submit"
+              class="bg-primary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-md transition"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <img
+                src="assets/images/logo-home.png"
+                alt="HOME Logo"
+                class="h-8 mr-2"
+              />
+              <span class="text-xl font-bold">HOME</span>
+            </div>
+            <p class="text-gray-400 mb-4">
+              Premium home appliances for modern living.
+            </p>
+            <p class="text-gray-400">
+              © 2023 HOME Appliances. All rights reserved.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#products"
+                  class="text-gray-400 hover:text-white transition"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  class="text-gray-400 hover:text-white transition"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-white transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-bold text-lg mb-4">Products</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Toasters</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Air Fryers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Blenders</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Coffee Makers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >All Products</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-bold text-lg mb-4">Support</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >FAQs</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Shipping Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Return Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Warranty</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 mb-4 md:mb-0">Accepted Payment Methods:</p>
+          <div class="flex space-x-4">
+            <i class="fab fa-cc-visa text-2xl text-gray-400"></i>
+            <i class="fab fa-cc-mastercard text-2xl text-gray-400"></i>
+            <i class="fab fa-cc-amex text-2xl text-gray-400"></i>
+            <i class="fab fa-cc-paypal text-2xl text-gray-400"></i>
+            <i class="fab fa-cc-apple-pay text-2xl text-gray-400"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Shopping Cart Functionality -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let cart = [];
+        let cartTotal = 0;
+
+        // Add to cart functionality
+        document.querySelectorAll(".add-to-cart").forEach((button) => {
+          button.addEventListener("click", function () {
+            const id = this.getAttribute("data-id");
+            const name = this.getAttribute("data-name");
+            const price = parseFloat(this.getAttribute("data-price"));
+
+            // Check if item already in cart
+            const existingItem = cart.find((item) => item.id === id);
+
+            if (existingItem) {
+              existingItem.quantity += 1;
+            } else {
+              cart.push({
+                id,
+                name,
+                price,
+                quantity: 1,
+              });
+            }
+
+            // Update cart total
+            cartTotal += price;
+
+            // Update UI
+            updateCartUI();
+
+            // Show confirmation
+            showAddToCartConfirmation(name);
+          });
+        });
+
+        function updateCartUI() {
+          const cartCount = document.querySelector(".cart-count");
+          const cartItemsContainer = document.querySelector(".cart-items");
+          const cartTotalElement = document.querySelector(".cart-total");
+          const cartTotalContainer = document.querySelector(
+            ".cart-dropdown .border-t"
+          );
+
+          // Update cart count
+          const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+          cartCount.textContent = totalItems;
+
+          // Update cart dropdown
+          if (cart.length === 0) {
+            cartItemsContainer.innerHTML =
+              '<p class="text-gray-500 text-sm">Your cart is empty</p>';
+            cartTotalContainer.classList.add("hidden");
+          } else {
+            cartItemsContainer.innerHTML = "";
+            cart.forEach((item) => {
+              const cartItem = document.createElement("div");
+              cartItem.className =
+                "flex justify-between items-center py-2 border-b";
+              cartItem.innerHTML = `
+                            <div>
+                                <h5 class="font-medium">${item.name}</h5>
+                                <p class="text-sm text-gray-500">${
+                                  item.quantity
+                                } × $${item.price.toFixed(2)}</p>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="font-medium mr-2">$${(
+                                  item.price * item.quantity
+                                ).toFixed(2)}</span>
+                                <button class="remove-item text-red-500 hover:text-red-700 text-sm" data-id="${
+                                  item.id
+                                }">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        `;
+              cartItemsContainer.appendChild(cartItem);
+            });
+
+            cartTotalElement.textContent = `$${cartTotal.toFixed(2)}`;
+            cartTotalContainer.classList.remove("hidden");
+          }
+
+          // Add event listeners to remove buttons
+          document.querySelectorAll(".remove-item").forEach((button) => {
+            button.addEventListener("click", function () {
+              const id = this.getAttribute("data-id");
+              const itemIndex = cart.findIndex((item) => item.id === id);
+
+              if (itemIndex !== -1) {
+                const item = cart[itemIndex];
+                cartTotal -= item.price * item.quantity;
+
+                if (item.quantity > 1) {
+                  item.quantity -= 1;
+                  cartTotal += item.price * (item.quantity - 1);
+                } else {
+                  cart.splice(itemIndex, 1);
+                }
+
+                updateCartUI();
+              }
+            });
+          });
+
+          // Set up payment method toggle
+          setupPaymentMethodToggle();
+
+          // Set up checkout button
+          setupCheckoutButton();
+        }
+
+        function setupPaymentMethodToggle() {
+          const paymentRadios = document.querySelectorAll(
+            'input[name="payment-method"]'
+          );
+          const creditCardForm = document.querySelector(".credit-card-form");
+
+          if (!paymentRadios.length) return;
+
+          paymentRadios.forEach((radio) => {
+            radio.addEventListener("change", function () {
+              if (this.value === "credit-card") {
+                creditCardForm.style.display = "block";
+              } else {
+                creditCardForm.style.display = "none";
+              }
+            });
+          });
+        }
+
+        function setupCheckoutButton() {
+          const checkoutBtn = document.querySelector(".checkout-btn");
+
+          if (!checkoutBtn) return;
+
+          checkoutBtn.addEventListener("click", function () {
+            processPayment();
+          });
+        }
+
+        function processPayment() {
+          const paymentMethod = document.querySelector(
+            'input[name="payment-method"]:checked'
+          ).value;
+
+          // Display processing message
+          const notification = document.createElement("div");
+          notification.className =
+            "fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50";
+          notification.innerHTML = `
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+              <div class="text-center">
+                <div class="mb-4">
+                  <i class="fas fa-spinner fa-spin text-primary text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Processing Payment</h3>
+                <p class="text-gray-600 mb-4">Please wait while we process your payment...</p>
+                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div class="progress-bar h-full bg-primary" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+          `;
+
+          document.body.appendChild(notification);
+
+          // Simulate progress
+          const progressBar = notification.querySelector(".progress-bar");
+          let progress = 0;
+          const progressInterval = setInterval(() => {
+            progress += 10;
+            progressBar.style.width = `${progress}%`;
+
+            if (progress >= 100) {
+              clearInterval(progressInterval);
+
+              // Show success message after "processing"
+              setTimeout(() => {
+                notification.innerHTML = `
+                  <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+                    <div class="text-center">
+                      <div class="mb-4 text-green-500">
+                        <i class="fas fa-check-circle text-5xl"></i>
+                      </div>
+                      <h3 class="font-bold text-lg mb-2">Payment Successful!</h3>
+                      <p class="text-gray-600 mb-4">Thank you for your purchase.</p>
+                      <p class="text-gray-600 mb-4">Order #: SANDBOX-${Date.now()
+                        .toString()
+                        .substring(7)}</p>
+                      <button class="close-notification bg-primary text-white py-2 px-4 rounded hover:bg-opacity-90">
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                `;
+
+                notification
+                  .querySelector(".close-notification")
+                  .addEventListener("click", function () {
+                    notification.remove();
+                    // Clear cart after successful payment
+                    cart = [];
+                    cartTotal = 0;
+                    updateCartUI();
+                  });
+              }, 500);
+            }
+          }, 200);
+        }
+
+        function showAddToCartConfirmation(productName) {
+          const notification = document.createElement("div");
+          notification.className =
+            "fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center";
+          notification.innerHTML = `
+                    <i class="fas fa-check-circle mr-2"></i>
+                    <span>${productName} added to cart!</span>
+                `;
+
+          document.body.appendChild(notification);
+
+          setTimeout(() => {
+            notification.style.transition = "opacity 0.5s";
+            notification.style.opacity = "0";
+
+            setTimeout(() => {
+              notification.remove();
+            }, 500);
+          }, 3000);
+        }
+
+        // Mobile menu toggle (would need more implementation)
+        document
+          .querySelector(".md\\:hidden")
+          .addEventListener("click", function () {
+            // This would need additional HTML/CSS for a proper mobile menu
+            alert("Mobile menu would open here in a full implementation");
+          });
+      });
+    </script>
+  </body>
+</html>

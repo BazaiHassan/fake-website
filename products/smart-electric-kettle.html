@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Electric Kettle - HOME Appliances</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF6B6B",
+              secondary: "#4ECDC4",
+              dark: "#292F36",
+              light: "#F7FFF7",
+              accent: "#FFE66D",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans bg-light text-dark">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <a href="../index.html">
+            <img
+              src="../assets/images/logo-home.png"
+              alt="HOME Logo"
+              class="h-10 mr-2"
+            />
+          </a>
+        </div>
+
+        <nav class="hidden md:flex space-x-8">
+          <a href="../index.html#home" class="hover:text-primary transition"
+            >Home</a
+          >
+          <a href="../index.html#products" class="hover:text-primary transition"
+            >Products</a
+          >
+          <a href="../index.html#about" class="hover:text-primary transition"
+            >About Us</a
+          >
+          <a
+            href="../index.html#testimonials"
+            class="hover:text-primary transition"
+            >Testimonials</a
+          >
+          <a href="../index.html#contact" class="hover:text-primary transition"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <div class="cart relative">
+            <button class="text-dark hover:text-primary transition">
+              <i class="fas fa-shopping-cart text-xl"></i>
+              <span
+                class="cart-count bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2"
+                >0</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Product Image -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img
+              src="../assets/images/electrical-kettle.jpg"
+              alt="Smart Electric Kettle"
+              class="w-full h-auto rounded-lg"
+              id="product-image"
+            />
+          </div>
+
+          <!-- Product Info -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h1 class="text-3xl font-bold mb-2">Smart Electric Kettle</h1>
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(76 reviews)</span>
+            </div>
+            <p class="text-2xl font-bold text-primary mb-6">$19.99</p>
+            <p class="text-gray-600 mb-6">
+              Boil water quickly and efficiently with the Smart Electric Kettle.
+              Its sleek design and advanced features make it a must-have for any
+              kitchen.
+            </p>
+
+            <div class="mb-6">
+              <h3 class="font-bold mb-2">Key Features:</h3>
+              <ul class="list-disc list-inside text-gray-600 space-y-2">
+                <li>Rapid boil technology</li>
+                <li>1.7-liter capacity</li>
+                <li>Auto shut-off and boil-dry protection</li>
+                <li>360-degree swivel base</li>
+                <li>LED indicator light</li>
+                <li>Stainless steel interior</li>
+                <li>Easy-to-read water level indicator</li>
+              </ul>
+            </div>
+
+            <div class="flex items-center mb-6">
+              <div class="flex items-center border rounded-lg overflow-hidden">
+                <button
+                  class="quantity-btn px-4 py-2 bg-gray-100 hover:bg-gray-200"
+                  id="decrease-quantity"
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  value="1"
+                  min="1"
+                  class="w-16 text-center border-x py-2"
+                  id="quantity"
+                />
+                <button
+                  class="quantity-btn px-4 py-2 bg-gray-100 hover:bg-gray-200"
+                  id="increase-quantity"
+                >
+                  +
+                </button>
+              </div>
+              <button
+                class="add-to-cart bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-lg ml-4 transition"
+                id="add-to-cart-btn"
+              >
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="border-t pt-6">
+              <h3 class="font-bold mb-4">Product Specifications:</h3>
+              <div class="grid grid-cols-2 gap-4 text-gray-600">
+                <div>
+                  <span class="font-medium">Brand:</span>
+                  <span>HOME Appliances</span>
+                </div>
+                <div>
+                  <span class="font-medium">Model:</span>
+                  <span>KETTLE-2023</span>
+                </div>
+                <div>
+                  <span class="font-medium">Warranty:</span>
+                  <span>1 Year</span>
+                </div>
+                <div>
+                  <span class="font-medium">Color:</span>
+                  <span>White</span>
+                </div>
+                <div>
+                  <span class="font-medium">Power:</span>
+                  <span>1500W</span>
+                </div>
+                <div>
+                  <span class="font-medium">Capacity:</span>
+                  <span>1.7 Liters</span>
+                </div>
+                <div>
+                  <span class="font-medium">Dimensions:</span>
+                  <span>9" x 6" x 10"</span>
+                </div>
+                <div>
+                  <span class="font-medium">Weight:</span>
+                  <span>2.5 lbs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products Section -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-8">You May Also Like</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <a href="smart-toaster-pro.html">
+              <img
+                src="../assets/images/toaster-home.jpg"
+                alt="Smart Toaster Pro"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-2">Smart Toaster Pro</h3>
+                <p class="text-primary font-bold">$44.99</p>
+              </div>
+            </a>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <a href="air-fryer-deluxe.html">
+              <img
+                src="../assets/images/airfrier.png"
+                alt="Air Fryer Deluxe"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-2">Air Fryer Deluxe</h3>
+                <p class="text-primary font-bold">$64.99</p>
+              </div>
+            </a>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <a href="barista-coffee-maker.html">
+              <img
+                src="../assets/images/cof-home.jpg"
+                alt="Barista Coffee Maker"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-2">Barista Coffee Maker</h3>
+                <p class="text-primary font-bold">$89.99</p>
+              </div>
+            </a>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <a href="power-blender-9000.html">
+              <img
+                src="../assets/images/belender-removebg.png"
+                alt="Power Blender 9000"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-2">Power Blender 9000</h3>
+                <p class="text-primary font-bold">$74.99</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Quantity controls
+        const quantityInput = document.getElementById("quantity");
+        const decreaseBtn = document.getElementById("decrease-quantity");
+        const increaseBtn = document.getElementById("increase-quantity");
+
+        decreaseBtn.addEventListener("click", () => {
+          const currentValue = parseInt(quantityInput.value);
+          if (currentValue > 1) {
+            quantityInput.value = currentValue - 1;
+          }
+        });
+
+        increaseBtn.addEventListener("click", () => {
+          const currentValue = parseInt(quantityInput.value);
+          quantityInput.value = currentValue + 1;
+        });
+
+        // Add to cart functionality
+        const addToCartBtn = document.getElementById("add-to-cart-btn");
+        addToCartBtn.addEventListener("click", () => {
+          const productName = document.querySelector("h1").textContent;
+          const quantity = parseInt(quantityInput.value);
+
+          // Show confirmation
+          const notification = document.createElement("div");
+          notification.className =
+            "fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center";
+          notification.innerHTML = `
+            <i class="fas fa-check-circle mr-2"></i>
+            <span>${quantity} ${productName} added to cart!</span>
+          `;
+
+          document.body.appendChild(notification);
+
+          setTimeout(() => {
+            notification.style.transition = "opacity 0.5s";
+            notification.style.opacity = "0";
+
+            setTimeout(() => {
+              notification.remove();
+            }, 500);
+          }, 3000);
+        });
+      });
+    </script>
+  </body>
+</html>
